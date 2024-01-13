@@ -1,4 +1,4 @@
-# messinfo
+# Messinfo
 
 A project regrading mess  management
 
