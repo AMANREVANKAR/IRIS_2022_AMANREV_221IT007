@@ -119,12 +119,13 @@ class adminservice{
                
         print('hello');
         print(adminemailid+adminname.toString());
-      final DocumentReference admincolldelete=FirebaseFirestore.instance.collection('messoffer').doc(adminemailid+adminname.toString());
+       final DocumentReference admincolldelete=FirebaseFirestore.instance.collection('messoffer').doc(adminemailid+adminname.toString());
       return await admincolldelete.delete();
         }
        else
        if(status==0)
        {
+       
           return await admincoll.set({
             'emailid':adminemailid,
            'messname':adminname,
@@ -139,6 +140,7 @@ class adminservice{
           'fri':fri,
           'sat':sat,
           'sun':sun,
+           'tokenid':tokenid,
            'status':'Cancel Request',
         });   
        }
@@ -147,11 +149,21 @@ class adminservice{
 
  Future updaterequestadmin(String name,String studentemailid,int status) async
   {
+ 
      final DocumentReference admincoll=FirebaseFirestore.instance.
      collection(adminemailid.toString()).doc('requested').collection('requests').doc(studentemailid!+adminname.toString());
        
+   
+
+   
        if(status==1)
        {
+        final DocumentSnapshot updatenoofseats =  await FirebaseFirestore.
+     instance.collection(adminemailid.toString())
+     .doc('cretemess').collection('messes').doc(adminname).get();
+
+     updatenoofseats['noofseats']!=(int.parse(updatenoofseats['noofseats'])-1).toString();
+
         return await admincoll.set({
          'name':name,
           'emailid':studentemailid,

@@ -101,11 +101,11 @@ void setcount(int status)async
 
      if(status==1){
         return await usercollection.set({
-          'status':'false',
+          'status':false,
         });
      }else{
         return await usercollection.set({
-          'status':'true',
+          'status':true,
         });
      }
 }

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -269,6 +270,7 @@ class _usersignup extends State<usersignup> {
                 child: TextFormField(
                   obscureText: false,
                   controller: messbalance,
+                  keyboardType: TextInputType.number,
                   validator: MultiValidator([
                            RequiredValidator(
                                       errorText: 'Please enter messbalance'),
@@ -290,33 +292,33 @@ class _usersignup extends State<usersignup> {
                   ),
                 ),
               ),
-              Container(
-                padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-                child: TextFormField(
-                  obscureText: false,
-                  controller: mpd,
-                  validator: MultiValidator([
-                    RequiredValidator(
-                        errorText: 'Please enter mess charge per day'),
-                  ]),
-                  cursorColor: Colors.white,
-                  style: TextStyle(color: Colors.white),  //<-- HERE
-                  decoration: const InputDecoration(
+              // Container(
+              //   padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+              //   child: TextFormField(
+              //     obscureText: false,
+              //     controller: mpd,
+              //     validator: MultiValidator([
+              //       RequiredValidator(
+              //           errorText: 'Please enter mess charge per day'),
+              //     ]),
+              //     cursorColor: Colors.white,
+              //     style: TextStyle(color: Colors.white),  //<-- HERE
+              //     decoration: const InputDecoration(
 
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
-                    ),
-                    labelStyle:  TextStyle(
-                      color:  Colors.white,
-                    ),
-                    // border: OutlineInputBorder(),
-                    labelText: 'Mess charge per day',
-                  ),
-                ),
-              ),
+              //       enabledBorder: UnderlineInputBorder(
+              //         borderSide: BorderSide(color: Colors.white),
+              //       ),
+              //       focusedBorder: UnderlineInputBorder(
+              //         borderSide: BorderSide(color: Colors.white),
+              //       ),
+              //       labelStyle:  TextStyle(
+              //         color:  Colors.white,
+              //       ),
+              //       // border: OutlineInputBorder(),
+              //       labelText: 'Mess charge per day',
+              //     ),
+              //   ),
+              // ),
           
               Container(
                 margin: EdgeInsets.fromLTRB(30,40,30,20),
@@ -328,17 +330,19 @@ class _usersignup extends State<usersignup> {
                 width: 80,
                 child: TextButton(
                   onPressed: () async {
-                    setState(() {
+                 
+                 if (_formkey.currentState!.validate()) {
+                     setState(() {
                       loadingvalue=true;
                     });
-                 if (_formkey.currentState!.validate()) {
                 dynamic result = await _auth.createuser(emailController.text.toString(), passwordController.text.toString(),
                 nameController.text.toString(),currmess.text.toString(),int.parse(messbalance.text));
 
           DataService _userservice=DataService();
           _userservice.createuserinfo(nameController.text.toString(), emailController.text.toString(), currmess.text.toString(), messbalance.text.toString());
-
-
+ final DocumentSnapshot usersigup=await FirebaseFirestore.instance.collection('messes').doc(_selectedItem.toString()).get();
+                  mpd.text=usersigup['mcpd'].toString();
+                  print(mpd.text.toString());
                   final data=  offlineusermodel(name:nameController.text.toString(),
                   emailid: emailController.text.toString(),
                   Rollno: rollnoController.text.toString(),
@@ -365,11 +369,15 @@ class _usersignup extends State<usersignup> {
                  }else{
 
 
+      
+
                       String? idtoken;
                   notificationervices _servicegetidtoken=notificationervices();
                   _servicegetidtoken.getdevicetoken().then((value) {
                     idtoken=value.toString();
                   });
+
+
 
 
                

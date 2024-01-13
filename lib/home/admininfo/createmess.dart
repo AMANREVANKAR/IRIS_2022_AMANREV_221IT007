@@ -234,20 +234,20 @@ class _createmesspage extends State<createmesspage>{
                                       
                                       adminservice _admin = adminservice(
                                           adminname: messname.text.toString(),
-                                          adminemailid: adminuser!.emailid.toString());
+                                          adminemailid: adminuser.emailid.toString());
 
                                           
-                                      await _admin.updateadmindata(
-                                          messname.text.toString(),
-                                          type.text.toString(),
-                                          int.parse(mpd.text),
-                                          mon.text.toString(),
-                                          tue.text.toString(),
-                                          wed.text.toString(),
-                                          thr.text.toString(),
-                                          fri.text.toString(),
-                                          sat.text.toString(),
-                                          sun.text.toString());
+                                      // await _admin.updateadmindata(
+                                      //     messname.text.toString(),
+                                      //     type.text.toString(),
+                                      //     int.parse(mpd.text),
+                                      //     mon.text.toString(),
+                                      //     tue.text.toString(),
+                                      //     wed.text.toString(),
+                                      //     thr.text.toString(),
+                                      //     fri.text.toString(),
+                                      //     sat.text.toString(),
+                                      //     sun.text.toString());
 
 
                                         await _admin.createmessrqueststatus(adminuser!.emailid.toString(),type.text, noofseats.text,1,int.parse(mpd.text),

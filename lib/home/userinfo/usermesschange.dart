@@ -209,26 +209,8 @@ late String notificationstatus;
                          
         
                                         if (await _checkcount.updatecount() ==
-                                            'false') {
+                                            false) {
 
-
-                       final userdocument=await FirebaseFirestore.instance.collection('users').doc(userdata!.emailid).get();
-                                             notificationfromuser _servicetorequestadmin = notificationfromuser();
-
-                        Fluttertoast.showToast(msg: notificationstatus.toString(),
-                     toastLength: Toast.LENGTH_SHORT,
-                      gravity: ToastGravity.BOTTOM,
-                      
-                       backgroundColor: Colors.white,
-                      textColor: Colors.black,
-                        fontSize: 16.0);
-                         _servicetorequestadmin.sendNotification(
-                              state.messInfo[index].tokenid.toString(),
-                              'Request for mess change',
-                              userdocument['name']+ ' has applied for '+state.messInfo[index].messname
-                              ).then((value) {
-                              notificationstatus=value;
-                              });
                                           DataService _requestfromuser =
                                               DataService(
                                                   uid: state.messInfo[index].messname!);
@@ -246,6 +228,25 @@ late String notificationstatus;
                                               widget.namefromuserhome.toString(),
                                               userdata!.emailid.toString()
                                              );
+
+                           final userdocument=await FirebaseFirestore.instance.collection('users').doc(userdata!.emailid).get();
+                           notificationfromuser _servicetorequestadmin = notificationfromuser();
+
+                    
+                         _servicetorequestadmin.sendNotification(
+                              state.messInfo[index].tokenid.toString(),
+                              'Request for mess change',
+                              userdocument['name']+ ' has applied for '+state.messInfo[index].messname
+                              ).then((value) {
+                              notificationstatus=value;
+                              });
+                                  Fluttertoast.showToast(msg: notificationstatus.toString(),
+                     toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM,
+                      
+                       backgroundColor: Colors.white,
+                      textColor: Colors.black,
+                        fontSize: 16.0);
                                           _checkcount.setcount(0);
                                         } else {
                                           showDialog(
