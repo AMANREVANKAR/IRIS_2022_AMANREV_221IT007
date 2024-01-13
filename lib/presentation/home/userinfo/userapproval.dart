@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:messinfo/models/student.dart';
-import 'package:messinfo/services/database.dart';
+import 'package:messinfo/data/services/database.dart';
 import 'package:provider/provider.dart';
 
 class approval extends StatefulWidget {

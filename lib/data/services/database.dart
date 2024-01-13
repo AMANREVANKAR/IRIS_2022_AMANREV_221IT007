@@ -19,8 +19,7 @@ class DataService{
     Future requestuserdata(String adminemailid,String messname,String studentemailid,
     String name,String currmessname)async
   {
-    // final DocumentReference usercollection = FirebaseFirestore.instance.collection('request').doc('request'
-    // +adminemailid).collection('requests').doc(studentemailid.toString());
+    
 
         final DocumentReference usercollection = FirebaseFirestore.instance.collection(adminemailid).doc('requested'
         ).collection('requests').doc(studentemailid+messname);

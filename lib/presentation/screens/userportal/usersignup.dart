@@ -5,11 +5,11 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:hive/hive.dart';
 import 'package:messinfo/models/offlineusermodel.dart';
-import 'package:messinfo/services/Hiveservices/boxes.dart';
-import 'package:messinfo/services/authentication/auth.dart';
-import 'package:messinfo/home/userinfo/userhome.dart';
-import 'package:messinfo/services/database.dart';
-import 'package:messinfo/services/notification_services.dart';
+import 'package:messinfo/data/services/Hiveservices/boxes.dart';
+import 'package:messinfo/data/services/authentication/auth.dart';
+import 'package:messinfo/presentation/home/userinfo/userhome.dart';
+import 'package:messinfo/data/services/database.dart';
+import 'package:messinfo/data/services/notification_services.dart';
 import 'package:messinfo/shared/loading.dart';
 class usersignup extends StatefulWidget {
   const usersignup({Key? key}) : super(key: key);

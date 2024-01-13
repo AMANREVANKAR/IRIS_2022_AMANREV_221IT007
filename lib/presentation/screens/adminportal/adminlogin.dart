@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:hive/hive.dart';
-import 'package:messinfo/services/authentication/auth.dart';
-import 'package:messinfo/services/databasesearchservice.dart';
-import 'package:messinfo/home/admininfo/adminhome.dart';
+import 'package:messinfo/data/services/authentication/auth.dart';
+import 'package:messinfo/data/services/databasesearchservice.dart';
+import 'package:messinfo/presentation/home/admininfo/adminhome.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:messinfo/services/notification_services.dart';
+import 'package:messinfo/data/services/notification_services.dart';
 import 'package:messinfo/shared/loading.dart';
 class adminlogin extends StatefulWidget {
   const adminlogin({Key? key}) : super(key: key);

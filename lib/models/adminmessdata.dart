@@ -5,6 +5,7 @@ class AdminMessInfo {
   String? messname;
   String? type;
   String? mpd;
+  String? noofseats;
   String? mon;
   String? tue;
   String? wed;
@@ -15,7 +16,7 @@ class AdminMessInfo {
   String? emailid;
   String? tokenid;
 
-  AdminMessInfo({this.messname,this.type,this.mpd,this.mon,this.tue,this.wed,
+  AdminMessInfo({this.messname,this.type,this.mpd,this.noofseats,this.mon,this.tue,this.wed,
   this.thur,this.fri,this.sat,this.sun,this.emailid,this.tokenid});
 
 
@@ -34,6 +35,7 @@ class AdminMessInfo {
       'sun': sun,
       'emailid':emailid,
       'tokenid':tokenid,
+      'noofseats':noofseats,
 
     };
   }
@@ -52,6 +54,7 @@ class AdminMessInfo {
       sun: map['sun'] != null ? map['sun'] as String : null,
       emailid: map['emailid'] != null ? map['emailid'] as String : null,
       tokenid: map['tokenid'] != null ? map['tokenid'] as String : null,
+      noofseats: map['noofseats'] != null ? map['noofseats'] as String : null,
     );
   }
 

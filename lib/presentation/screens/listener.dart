@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:messinfo/models/student.dart';
-import 'package:messinfo/screens/loginscreen.dart';
-import 'package:messinfo/home/userinfo/userhome.dart';
-import 'package:messinfo/home/admininfo/adminhome.dart';
+import 'package:messinfo/presentation/screens/loginscreen.dart';
+import 'package:messinfo/presentation/home/userinfo/userhome.dart';
+import 'package:messinfo/presentation/home/admininfo/adminhome.dart';
 
 class listener extends StatelessWidget{
   @override

@@ -42,7 +42,7 @@ class adminservice{
   }
 
    Future reqestadmindata(String adminemailid,String messname,String  type,int mpd,
-     String mon,String tue,String wed,String thur,String fri,String sat,String sun,String tokenid)async
+     String mon,String tue,String wed,String thur,String fri,String sat,String sun,String tokenid,String noofseats)async
   {
 
     if(adminname!=null)
@@ -61,6 +61,8 @@ class adminservice{
           'sat':sat,
           'sun':sun,
           'tokenid':tokenid,
+           'noofseats':noofseats,
+
         });
     }
   }
@@ -104,7 +106,6 @@ class adminservice{
            'messname':adminname,
            'type':type,
            'noofseats':noofseats,
-           'type':type,
           'mpd':mpd.toString(),
           'mon':mon,
           'tue':tue,
@@ -131,7 +132,6 @@ class adminservice{
            'messname':adminname,
            'type':type,
            'noofseats':noofseats,
-           'type':type,
           'mpd':mpd.toString(),
           'mon':mon,
           'tue':tue,

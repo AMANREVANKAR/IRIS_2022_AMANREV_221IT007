@@ -5,13 +5,13 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:hive/hive.dart';
 import 'package:messinfo/models/leaves.dart';
 import 'package:messinfo/models/offlineusermodel.dart';
-import 'package:messinfo/services/notification_services.dart';
-import 'screens/loginscreen.dart';
+import 'package:messinfo/data/services/notification_services.dart';
+import 'presentation/screens/loginscreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'services/authentication/auth.dart';
+import 'data/services/authentication/auth.dart';
 import 'models/student.dart';
-import 'screens/listener.dart';
+import 'presentation/screens/listener.dart';
 import 'package:provider/provider.dart';
 import 'package:path_provider/path_provider.dart';
 

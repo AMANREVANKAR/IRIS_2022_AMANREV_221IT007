@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:messinfo/services/database.dart';
+import 'package:messinfo/data/services/database.dart';
 
 class presentuserinfo extends StatelessWidget{
   var emailid;
@@ -18,10 +18,7 @@ print('hello'+emailid.toString());
              data=value;
       });
 
-  // for(var d in data)
-  // {
-  //   print('hello'+d.toString());
-  // }
+
 
    return Container(
     child: Text(data[0]),

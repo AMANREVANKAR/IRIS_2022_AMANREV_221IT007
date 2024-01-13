@@ -1,13 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:messinfo/home/admininfo/createmess.dart';
-import 'package:messinfo/home/admininfo/requestuser.dart';
-import 'package:messinfo/home/userinfo/userapproval.dart';
-import 'package:messinfo/home/userinfo/usermesschange.dart';
-import 'package:messinfo/services/authentication/auth.dart';
-import 'package:messinfo/screens/loginscreen.dart';
+import 'package:messinfo/presentation/home/admininfo/createmess.dart';
+import 'package:messinfo/presentation/home/admininfo/requestuser.dart';
+import 'package:messinfo/presentation/home/userinfo/userapproval.dart';
+import 'package:messinfo/presentation/home/userinfo/usermesschange.dart';
+import 'package:messinfo/data/services/authentication/auth.dart';
+import 'package:messinfo/presentation/screens/loginscreen.dart';
 import 'package:messinfo/models/admin.dart';
-import 'package:messinfo/services/databaseadminservice.dart';
+import 'package:messinfo/data/services/databaseadminservice.dart';
 import 'package:messinfo/models/student.dart';
 import 'package:provider/provider.dart';
 

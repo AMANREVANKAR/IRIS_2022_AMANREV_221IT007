@@ -5,29 +5,36 @@ class calculateleaves{
 
 
   Future<double> noofdays(List<leave> datePairs) async {
-
+     
+    //  datePairs
     var box=await Hive.openBox('currleave');
     DateTime signedin =box.get('currdate');
     double? totalDays = 0;
-
+      DateTime now = DateTime.now();
+if(datePairs.length!=0)
+{
   for (var pair in datePairs) {
-    print(pair.dateto);
-    print(pair.datefrom);
-    if(pair.dateto!=null && pair.datefrom!=null)
+ 
+   if( (now.isBefore(pair.datefrom!)) )
+   {
+     totalDays =totalDays!+ pair.dateto!.difference(now).inDays;
+        break;
+   }
+  else
     totalDays =totalDays!+ pair.dateto!.difference(pair.datefrom!).inDays;
     
   }
 
-    DateTime now = DateTime.now();
+  
      int daysFromNow = now.difference(signedin).inDays;
-     print(totalDays);
-     print(daysFromNow);
-     print('aman'+(totalDays! - daysFromNow).toString());
-       
-       if(daysFromNow>totalDays)
-       return totalDays - daysFromNow;
-       else
-       return 0;
+  
+     print((totalDays! - daysFromNow).abs().toString());
+  
+       return (totalDays! - daysFromNow).abs() ;
+}else{
+    return 0;
+  }
+
   }
       
 }

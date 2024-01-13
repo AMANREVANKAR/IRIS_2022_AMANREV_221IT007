@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:hive/hive.dart';
-import 'package:messinfo/services/authentication/auth.dart';
-import 'package:messinfo/home/userinfo/userhome.dart';
+import 'package:messinfo/data/services/authentication/auth.dart';
+import 'package:messinfo/presentation/home/userinfo/userhome.dart';
 import 'package:messinfo/shared/loading.dart';
 class userlogin extends StatefulWidget {
   const userlogin({Key? key}) : super(key: key);

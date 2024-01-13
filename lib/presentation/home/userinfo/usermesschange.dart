@@ -7,12 +7,12 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hive/hive.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:messinfo/bloc/usermesschange_bloc.dart';
-import 'package:messinfo/home/userinfo/userapproval.dart';
-import 'package:messinfo/home/userinfo/userhome.dart';
+import 'package:messinfo/presentation/home/userinfo/userapproval.dart';
+import 'package:messinfo/presentation/home/userinfo/userhome.dart';
 import 'package:messinfo/models/student.dart';
-import 'package:messinfo/services/database.dart';
-import 'package:messinfo/services/notification_services.dart';
-import 'package:messinfo/services/notificationuserservice.dart';
+import 'package:messinfo/data/services/database.dart';
+import 'package:messinfo/data/services/notification_services.dart';
+import 'package:messinfo/data/services/notificationuserservice.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 
@@ -111,7 +111,7 @@ late String notificationstatus;
                                     alignment: Alignment.centerLeft,
                                     child: Text(
                                       'No of seats:' +
-                                          state.messInfo[index].mpd!,
+                                          state.messInfo[index].noofseats!,
                                       style: TextStyle(
                                           fontSize: 25, color: Colors.black),
                                     ),

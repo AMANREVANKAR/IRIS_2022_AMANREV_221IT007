@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:messinfo/models/student.dart';
-import 'package:messinfo/services/database.dart';
+import 'package:messinfo/data/services/database.dart';
 class Authservice {
 
 final FirebaseAuth _auth=FirebaseAuth.instance;

@@ -7,22 +7,22 @@ import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
-import 'package:messinfo/home/userinfo/registermess.dart';
-import 'package:messinfo/home/userinfo/topup.dart';
-import 'package:messinfo/home/userinfo/usermesschange.dart';
-import 'package:messinfo/home/userinfo/usersmesinfo.dart';
-import 'package:messinfo/home/userinfo/usersuggestion.dart';
+import 'package:messinfo/presentation/home/userinfo/registermess.dart';
+import 'package:messinfo/presentation/home/userinfo/topup.dart';
+import 'package:messinfo/presentation/home/userinfo/usermesschange.dart';
+import 'package:messinfo/presentation/home/userinfo/usersmesinfo.dart';
+import 'package:messinfo/presentation/home/userinfo/usersuggestion.dart';
 import 'package:messinfo/models/leaves.dart';
 import 'package:messinfo/models/leaves.dart';
 import 'package:messinfo/models/offlineusermodel.dart';
 import 'package:messinfo/models/student.dart';
-import 'package:messinfo/services/Hiveservices/boxes.dart';
-import 'package:messinfo/services/authentication/auth.dart';
+import 'package:messinfo/data/services/Hiveservices/boxes.dart';
+import 'package:messinfo/data/services/authentication/auth.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:messinfo/services/balancecalculation.dart';
-import 'package:messinfo/widgets/widgets.dart';
+import 'package:messinfo/domain/balancecalculation.dart';
+import 'package:messinfo/presentation/widgets/widgets.dart';
 import 'package:provider/provider.dart';
-import '../../models/leaves.dart';
+import '../../../models/leaves.dart';
 
 
 class userhome extends StatefulWidget{
@@ -36,6 +36,7 @@ class userhome extends StatefulWidget{
 class _userhome extends State<userhome>{
   
 String? messname;
+double finalnoofdays=0;
        
 TextEditingController mess=TextEditingController();
   @override
@@ -55,7 +56,9 @@ double width = MediaQuery.of(context).size.width;
 
 
    calculateleaves _leave=calculateleaves();
-   _leave.noofdays(leaveinfo);
+    _leave.noofdays(leaveinfo).then((value){
+      finalnoofdays=value;
+    });
 
 
     final userhome = Provider.of<student?>(context);
@@ -347,7 +350,7 @@ Future<String?> getmessname()async
                              Container(
                             margin: EdgeInsets.fromLTRB(20, 15, 0, 20),
                             alignment: Alignment.centerLeft,
-                            child: Text('Bal :           '+data.last.currbal.toString(),style: TextStyle(fontSize: 24,color: Colors.black),)),
+                            child: Text('Bal :           '+(int.parse(data.last.currbal!)-finalnoofdays*int.parse(data.last.messbalanceperday!)).toString()+' Rs',style: TextStyle(fontSize: 24,color: Colors.black),)),
                                       
                                
                              Container(

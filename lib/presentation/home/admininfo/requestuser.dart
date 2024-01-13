@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:messinfo/models/student.dart';
-import 'package:messinfo/services/databaseadminservice.dart';
+import 'package:messinfo/data/services/databaseadminservice.dart';
 import 'package:provider/provider.dart';
 
 class requestmesspage extends StatefulWidget{

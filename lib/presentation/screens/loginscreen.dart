@@ -2,11 +2,11 @@
 import 'package:firebase_core_dart/firebase_core_dart.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:messinfo/screens/adminportal/adminlogin.dart';
-import 'package:messinfo/screens/userportal/userlogin.dart';
-import 'package:messinfo/screens/userportal/usersignup.dart';
-import 'package:messinfo/services/authentication/auth.dart';
-import 'package:messinfo/services/notification_services.dart';
+import 'package:messinfo/presentation/screens/adminportal/adminlogin.dart';
+import 'package:messinfo/presentation/screens/userportal/userlogin.dart';
+import 'package:messinfo/presentation/screens/userportal/usersignup.dart';
+import 'package:messinfo/data/services/authentication/auth.dart';
+import 'package:messinfo/data/services/notification_services.dart';
 
 class loginscreen extends StatefulWidget{
   @override

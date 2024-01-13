@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:hive/hive.dart';
-import 'package:messinfo/services/authentication/auth.dart';
+import 'package:messinfo/data/services/authentication/auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:messinfo/home/admininfo/createmess.dart';
-import 'package:messinfo/home/admininfo/requestuser.dart';
-import 'package:messinfo/services/authentication/auth.dart';
-import 'package:messinfo/screens/loginscreen.dart';
+import 'package:messinfo/presentation/home/admininfo/createmess.dart';
+import 'package:messinfo/presentation/home/admininfo/requestuser.dart';
+import 'package:messinfo/data/services/authentication/auth.dart';
+import 'package:messinfo/presentation/screens/loginscreen.dart';
 import 'package:messinfo/models/admin.dart';
-import 'package:messinfo/services/databaseadminservice.dart';
+import 'package:messinfo/data/services/databaseadminservice.dart';
 import 'package:messinfo/models/student.dart';
 import 'package:provider/provider.dart';
 class createmesspage extends StatefulWidget{
@@ -360,7 +360,7 @@ class _createmesspage extends State<createmesspage>{
                                           child: Row(
                                             children:[ 
                                               Container(
-                                            
+                                             width: 250,
                                               margin: EdgeInsets.fromLTRB(10, 0, 40, 0),
                                               alignment: Alignment.centerLeft,
                                               child: Text(
@@ -403,7 +403,7 @@ class _createmesspage extends State<createmesspage>{
                                                                   _requestservice.reqestadmindata(adminuser.emailid.toString(), adminsdata['messname'], 
                                                                   adminsdata['type'],int.parse(adminsdata['mpd']), 
                                                                   adminsdata['mon'], adminsdata['tue'], adminsdata['wed'], 
-                                                                  adminsdata['thur'], adminsdata['fri'], adminsdata['sat'], adminsdata['sun'],box.get('tokenid'));
+                                                                  adminsdata['thur'], adminsdata['fri'], adminsdata['sat'], adminsdata['sun'],box.get('tokenid'),adminsdata['noofseats']);
 
                                         
                                                             if(adminsdata['status']=='Request')
@@ -411,7 +411,7 @@ class _createmesspage extends State<createmesspage>{
 
                                                              
                                                              _requestservice.createmessrqueststatus(adminuser.emailid.toString(), 
-                                                                  adminsdata['type'],'0',0,int.parse(adminsdata['mpd']), 
+                                                                  adminsdata['type'],adminsdata['noofseats'],0,int.parse(adminsdata['mpd']), 
                                                                   adminsdata['mon'], adminsdata['tue'], adminsdata['wed'], 
                                                                   adminsdata['thur'], adminsdata['fri'], adminsdata['sat'], adminsdata['sun'],box.get('tokenid'));
 
@@ -421,7 +421,7 @@ class _createmesspage extends State<createmesspage>{
                                                             if(adminsdata['status']=='Cancel Request')
                                                             {
                                                              _requestservice.createmessrqueststatus(adminuser.emailid.toString(), 
-                                                                  adminsdata['type'],'0',1,int.parse(adminsdata['mpd']), 
+                                                                  adminsdata['type'],adminsdata['noofseats'],1,int.parse(adminsdata['mpd']), 
                                                                   adminsdata['mon'], adminsdata['tue'], adminsdata['wed'], 
                                                                   adminsdata['thur'], adminsdata['fri'], adminsdata['sat'], adminsdata['sun'],box.get('tokenid'));
                                                                   }
@@ -447,8 +447,11 @@ class _createmesspage extends State<createmesspage>{
                                                     ),
                                                    // margin: EdgeInsets.only(left: 13),
                                                     child: TextButton(
-                                                      onPressed: () {
+                                                      onPressed: ()async {
+final DocumentReference admincolldelete=FirebaseFirestore.instance.collection('messoffer').doc((adminuser.emailid!+adminsdata['messname']).toString());
+  await admincolldelete.delete();
                                                         setState(() {
+
                                                           adminservice _admin =
                                                               adminservice();
                                                           _admin.deletedocument(
