@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "537836645520",
+    "project_id": "messinfo-bb96b",
+    "storage_bucket": "messinfo-bb96b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537836645520:android:e9b8572f3cbdac3e633c15",
+        "android_client_info": {
+          "package_name": "com.example.messinfo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5n4nRqsd4CiK1l0bfwLrAeCwsRTI2emc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
