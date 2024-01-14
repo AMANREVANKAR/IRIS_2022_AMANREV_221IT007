@@ -45,6 +45,7 @@ This project is basically a app which is designed to revolutionize mess system  
 
 - videolink of a project:  https://drive.google.com/file/d/1QPN9LyGxT4TX6Zf1CEgQKJbfCvmTwFZn/view?usp=drive_link
 - videokink of which shows notifiaction sending and receving from two different devices: https://drive.google.com/file/d/1-xhurtyGAGdwJx9PIijRYM42GNBXbnhO/view?usp=drive_link
+- apk file link: https://drive.google.com/file/d/1H3PkLnfUyMWNCAE5hp1XEFucPHOjmjb2/view?usp=drive_link
 
 
 ### Operating systems:
