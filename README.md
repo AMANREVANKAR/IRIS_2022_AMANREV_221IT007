@@ -67,6 +67,6 @@ This project is basically a app which is designed to revolutionize mess system  
 
 ## Design Tools used (not compulsory) and about your interest in UI/UX
 
-- no design tool used but have knowledge about converting figma too flutter
+- no design tool used but have knowledge about converting figma to flutter
 
 
