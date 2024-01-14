@@ -40,6 +40,10 @@ This project is basically a app which is designed to revolutionize mess system  
 - Admin can see all the suggestion given by the users and try improving his quality of the food,
 
 - Admin also gets the feature to deallocate the user from the mess
+  
+## Unimplemented/planned Features
+-notification when there is insufficient balance
+
 
 ### video links
 
@@ -56,5 +60,13 @@ This project is basically a app which is designed to revolutionize mess system  
 - Stack overflow
 
 - Firebase and flutter docs
+  
+- Reso coder TDD arhitecture
+  
+- net ninja(youtube channel)
+
+## Design Tools used (not compulsory) and about your interest in UI/UX
+
+- no design tool used but have knowledge about converting figma too flutter
 
 
