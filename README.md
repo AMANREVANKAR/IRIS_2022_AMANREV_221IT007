@@ -49,7 +49,7 @@ This project is basically a app which is designed to revolutionize mess system  
 
 
 ### Operating systems:
-- MacOs
+- MacOs sonoma 14.1.1
 
 ### Refrences
 
