@@ -41,6 +41,12 @@ This project is basically a app which is designed to revolutionize mess system  
 
 - Admin also gets the feature to deallocate the user from the mess
 
+### video links
+
+- videolink of a project:  https://drive.google.com/file/d/1QPN9LyGxT4TX6Zf1CEgQKJbfCvmTwFZn/view?usp=drive_link
+- videokink of which shows notifiaction sending and receving from two different devices: https://drive.google.com/file/d/1-xhurtyGAGdwJx9PIijRYM42GNBXbnhO/view?usp=drive_link
+
+
 ### Operating systems:
 - MacOs
 
